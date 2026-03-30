@@ -1,16 +1,46 @@
+import "./index.css";
+import Moon from "./assets/Moon.svg";
+import Sun from "./assets/Sun.svg";
+import { ColorMode } from "./components/color-mode.js";
+import { useState, useEffect } from "react";
 
 function Mains() {
+    const [theme, setTheme] = useState('light');
+
+    useEffect(() => {
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        setTheme(savedTheme);
+    }, []);
+
+    const handleColorModeToggle = () => {
+        ColorMode();
+        const newTheme = document.documentElement.getAttribute('data-theme');
+        setTheme(newTheme);
+    };
+
     return (
         <main>
             <section className="Home">
-                <div className="My-descriptions">
-                    <h1>Hi, I'm Martin Mamaradlo</h1>
-                    <h2>From browser tabs to taskbars, I build software that works where you do.</h2>
-                </div>
-
                 <div className="MyPicture">
                     <img src="/src/assets/Me.png" alt="Martin"/>
                 </div>
+
+                <div className="My-descriptions">
+                    <div>
+                        <h1>Martin Mamaradlo</h1>
+                        <button id="color-mode-toggle" onClick={handleColorModeToggle} aria-label="toggle color mode">
+                        <img src={theme === 'light' ? Moon : Sun} alt={theme === 'light' ? 'Dark' : 'Light'} />
+                        </button>
+                    </div>
+
+                    <div>
+                        <p>Student | Software Developer </p>
+                    </div>
+                    
+                    <h2>From browser tabs to taskbars, I build software that works where you do.</h2>
+                </div>
+
+                
             </section>
 
             <section className="About">
