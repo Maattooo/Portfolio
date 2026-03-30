@@ -1,6 +1,6 @@
 import "./index.css";
-import Moon from "./assets/Moon.svg";
-import Sun from "./assets/Sun.svg";
+import { FiMoon, FiSun } from "react-icons/fi";
+import { FaGithub, FaFacebook, FaLinkedin } from "react-icons/fa";
 import { ColorMode } from "./components/color-mode.js";
 import { useState, useEffect } from "react";
 
@@ -29,15 +29,31 @@ function Mains() {
                     <div>
                         <h1>Martin Mamaradlo</h1>
                         <button id="color-mode-toggle" onClick={handleColorModeToggle} aria-label="toggle color mode">
-                        <img src={theme === 'light' ? Moon : Sun} alt={theme === 'light' ? 'Dark' : 'Light'} />
+                        {theme === 'light' ? <FiMoon size={26} /> : <FiSun size={26} />}
                         </button>
                     </div>
 
                     <div>
                         <p>Student | Software Developer </p>
+                        <h5>From browser tabs to taskbars, I build software that works where you do.</h5>
                     </div>
                     
-                    <h2>From browser tabs to taskbars, I build software that works where you do.</h2>
+                    <div>
+                        <a href="#" target="_blank">
+                            <FaGithub size={26} color="black"/>
+                        </a>
+                        <a href="#" target="_blank">
+                            <FaFacebook size={26} color="black"/>
+                        </a>
+                        <a href="#" target="_blank">
+                            <FaLinkedin size={26} color="black"/>
+                        </a>
+
+                        <button>
+                            
+                        </button>
+                    </div>
+                    
                 </div>
 
                 
