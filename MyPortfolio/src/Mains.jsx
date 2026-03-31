@@ -133,7 +133,7 @@ function Mains() {
                         <div className="lists">
                             <div className="Pageant-System">
                                 <div>
-                                    <img src="public/Pageantd.PNG" alt="Pageant System" onClick={() => setModalContent('pageant')}/>
+                                    <img src="Pageantd.PNG" alt="Pageant System" onClick={() => setModalContent('pageant')}/>
                                 </div>
                                 <p>Pageant System</p>
                             </div>
@@ -188,7 +188,7 @@ function Mains() {
                         </div>
                         <div className="Pageant-Scode">
                             <div>
-                                <img src="public/Pageantd.PNG" alt="" />
+                                <img src="Pageantd.PNG" alt="" />
                             </div>
                             <div className="Pageant-Info">
                                 <a href="https://github.com/Maattooo/PageantSystem" target="_blank">
