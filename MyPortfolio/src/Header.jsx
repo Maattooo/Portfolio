@@ -5,30 +5,7 @@ import { IoMenu } from "react-icons/io5";
 import { useEffect, useState, useRef } from "react";
 
 function Header() {
-    const [isHidden, setIsHidden] = useState(false);
-    const lastScrollY = useRef(0);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            const currentScrollY = window.scrollY;
-            
-            // 1. If scrolling down and passed a certain distance (e.g., 150px)
-            if (currentScrollY > lastScrollY.current && currentScrollY > 150) {
-                setIsHidden(true);
-            } 
-            // 2. If scrolling up
-            else {
-                setIsHidden(false);
-            }
-            
-            lastScrollY.current = currentScrollY;
-        };
-
-        window.addEventListener("scroll", handleScroll, { passive: true });
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
-
-    // ... Keep your existing useEffect for the nav-slider here ...
+    
     useEffect(() => {
         const navLinks = document.querySelectorAll(".nav-link");
         const slider = document.querySelector(".nav-slider");
@@ -76,6 +53,7 @@ function Header() {
                     <span className="nav-slider"></span>
                 </ul>
             </nav>
+<div onClick={closeSidebar}></div>
         </header>
     );
 }
