@@ -34,8 +34,7 @@ function Header() {
     }, []);
 
     return (
-        // Add the dynamic class here
-        <header className={isHidden ? "header-hidden" : ""}>
+        <header>
             <h1 id="title">My Portfolio</h1>
             <button id="open-sidebar" onClick={openSidebar} aria-label="open sidebar">
                 <IoMenu />
