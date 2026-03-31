@@ -26,7 +26,7 @@ function Mains() {
             {}
             <section className="Home" id="Home">
                 <div className="MyPicture">
-                    <img src="/src/assets/Me.png" alt="Martin"/>
+                    <img src={theme === 'light' ? "Me.png" : "MeD.png"} alt="Martin"/>
                 </div>
 
                 <div className="My-descriptions">
@@ -133,7 +133,7 @@ function Mains() {
                         <div className="lists">
                             <div className="Pageant-System">
                                 <div>
-                                    <img src="/src/assets/Pageantd.PNG" alt="Pageant System" onClick={() => setModalContent('pageant')}/>
+                                    <img src="public/Pageantd.PNG" alt="Pageant System" onClick={() => setModalContent('pageant')}/>
                                 </div>
                                 <p>Pageant System</p>
                             </div>
@@ -173,7 +173,7 @@ function Mains() {
                             </button>
                         </div>
                         <div className="modal-list">
-                            <p>mrtn.mmrdlo@gmail.com</p>
+                            <a href="https://mail.google.com/mail/u/0/?fs=1&to=mrtn.mmrdlo@gmail.com&su=Inquiry&body=&tf=cm" target="_blank">mrtn.mmrdlo@gmail.com</a>
                         </div>
                     </div>
                 )}
@@ -188,7 +188,7 @@ function Mains() {
                         </div>
                         <div className="Pageant-Scode">
                             <div>
-                                <img src="/src/assets/Pageantd.PNG" alt="" />
+                                <img src="public/Pageantd.PNG" alt="" />
                             </div>
                             <div className="Pageant-Info">
                                 <a href="https://github.com/Maattooo/PageantSystem" target="_blank">

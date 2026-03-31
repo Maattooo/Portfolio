@@ -3,10 +3,10 @@
     --secondary-color:	#6497b1;
     --text-color: #011f4b;
     --toggle-color: #e44c05;
-    --modal-list-color: #011f4b;
+    --modal-list-color: #0c3777;
     --about-color: #3c4043;
     --icon-color: #e44c05;
-    --hover-color: #e44c05;
+    --hover-color: #6497b1;
     --font-family: Verdana, Geneva, sans-serif;
 }
 
@@ -18,6 +18,7 @@
     --modal-list-color: #131111;
     --about-color: #222121;
     --icon-color: #e4bb05;
+    --hover-color: #982e04;
 }
 
 * {
@@ -36,7 +37,7 @@ html {
 
 body {
     min-height: 100vh;
-    min-width: 100vw;
+    width: 100vw; 
     margin-left: auto;
     margin-right: auto;
     background-color: var(--primary-color);
@@ -44,26 +45,37 @@ body {
 }
 
 header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: var(--primary-color);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
     display: flex;
     align-items: center;
-    border-bottom: none;
-    padding: 1em 5em;
-    max-width: 1200px;
-    margin: 0 auto;
+    padding: 1em 2em;
+    max-width: 100vw;
+}
+
+.header-hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none; 
+}
+
+main {
+    margin-top: 1em;
+    width: min(92%, 1200px); 
+    background-color: var(--secondary-color);
+    margin: 1em auto;
+    padding: min(3em, 5%); 
+    border-radius: 2em;
 }
 
 #title {
     margin-right: auto;
     font-size: 2em;
-}
-
-main{
-    min-width: 500px;
-    max-width: 1200px;
-    background-color: var(--secondary-color);
-    margin: 1em auto;
-    padding: min(5em, 7%);   
-    border-radius: 2em;
 }
 
 main p{
@@ -246,7 +258,7 @@ section{
 
 .modals {
     background-color: var(--secondary-color);
-    min-width: 15em;
+    width: 100%; 
     max-width: 25em;
     padding: 20px;
     border-radius: 8px;              
@@ -275,6 +287,11 @@ section{
     gap: 20px;
     justify-content: center;
     padding-top: 1em;
+}
+
+.modal-list a {
+    text-decoration: none;
+    color: var(--modal-list-color);
 }
 
 .modal-lists a, .modal-lists p {
@@ -317,10 +334,10 @@ section{
     margin-top: 1em;
 }
 
-.Skills{
+.Skills {
     border: none;
     box-shadow: var(--about-color, 0.3) 0px 1px 2px 0px, var(--about-color, 1.5) 0px 1px 3px 1px;
-    min-width: 15em;
+    width: 100%; 
     max-width: 50em;
     border-radius: .5em;
 }
@@ -442,15 +459,13 @@ section{
     padding: 0.5em;
 }
 
+
 .Project-lists{
     border: none;
     box-shadow: var(--about-color, 0.3) 0px 1px 2px 0px, var(--about-color, 1.5) 0px 1px 3px 1px;
-    min-width: 15em;
+    width: 100%;
     max-width: 50em;
-    border-radius: .5em;
-}
-
-.Project-lists{
+    border-radius: 0.5em;
     display: flex;
     justify-content: left;
     border-bottom: 1px solid var(--about-color, 3);
@@ -488,11 +503,11 @@ section{
     transform: translateY(-4px) scale(1.04);
 }
 
-#Pageant{
+#Pageant {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 30em;
+    width: 100%; 
     max-width: 50em;
     gap: 1em;
 }
@@ -503,7 +518,7 @@ section{
 }
 
 .Pageant-Scode{
-    min-width: 25em;
+    width: 100%;
     max-width: 40em;
     justify-content: center;
     text-align: center;
@@ -541,4 +556,45 @@ section{
     color: var(--text-color);
     padding: .2em .4em;
     transition: background-color .3s ease, color .3s ease;
+}
+
+/* For Phone  */ 
+@media screen and (max-width: 768px) {
+
+    header{
+        padding: 0.8em 1.2em;
+    }
+
+    .Home {
+        flex-direction: column;
+        text-align: center;
+        gap: 1em;
+    }
+
+    .MyPicture img {
+        width: 60%;
+        max-width: 12em;
+    }
+
+    .My-Name {
+        justify-content: center;
+    }
+    
+    .My-Bio h3 {
+        font-size: 1.1em;
+    }
+
+    .My-Buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .frontend .lists ul, .backend .lists ul, .DevTools .lists ul {
+        justify-content: center;
+    }
+
+    .frontend .lists li, .backend .lists li, .DevTools .lists li {
+        width: 100%; 
+        max-width: 200px;
+    }
 }
